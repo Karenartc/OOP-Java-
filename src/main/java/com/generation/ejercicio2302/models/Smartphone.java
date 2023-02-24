@@ -1,89 +1,63 @@
 package com.generation.ejercicio2302.models;
 
-public class Smartphone {
+public class Smartphone extends ArticuloElectronico{
 
-public String marca;
-public String modelo;
-public String color;
 public Integer capacidad;
-public String sistemaOperativo;
+public String procesador;
+public Boolean camara;
 
 
 public Smartphone() {
+    super();
 }
 
-public Smartphone(String marca, String modelo, String color, Integer capacidad, String sistemaOperativo) {
-    this.marca = marca;
-    this.modelo = modelo;
-    this.color = color;
+
+public Smartphone(String marca, String modelo, String color, String sistemaOperativo, Integer tamanio,
+        Boolean bluetooth, Integer capacidad, String procesador, Boolean camara) {
+    super(marca, modelo, color, sistemaOperativo, tamanio, bluetooth);
     this.capacidad = capacidad;
-    this.sistemaOperativo = sistemaOperativo;
+    this.procesador = procesador;
+    this.camara = camara;
 }
 
-
-public String getMarca() {
-    return marca;
-}
-
-public void setMarca(String marca) {
-    this.marca = marca;
-}
-
-public String getModelo() {
-    return modelo;
-}
-
-public void setModelo(String modelo) {
-    this.modelo = modelo;
-}
-
-public String getColor() {
-    return color;
-}
-
-public void setColor(String color) {
-    this.color = color;
-}
 
 public Integer getCapacidad() {
     return capacidad;
 }
 
+
 public void setCapacidad(Integer capacidad) {
     this.capacidad = capacidad;
 }
 
-public String getSistemaOperativo() {
-    return sistemaOperativo;
-}
 
-public void setSistemaOperativo(String sistemaOperativo) {
-    this.sistemaOperativo = sistemaOperativo;
+public String getProcesador() {
+    return procesador;
 }
 
 
-public void llamar(boolean contestar){
-    if(contestar = true){
-        System.out.println("Alo?");
-    }else{
-        System.out.println("Deje su mensaje en el buzon de voz");
-    }
+public void setProcesador(String procesador) {
+    this.procesador = procesador;
 }
 
-public void escribir(){
-    System.out.println("Esta ecribiendo un mensaje...");
+
+public Boolean getCamara() {
+    return camara;
+}
+
+
+public void setCamara(Boolean camara) {
+    this.camara = camara;
 }
 
 public void grabar(){
-    System.out.println("Esta grabando un video...");
+    System.out.println("Grabó su TikTok");
 }
 
-public void buscarInternet(){
-    System.out.println("Google");
+@Override
+public String toString() {
+    return super.toString() + "Smartphone [capacidad=" + capacidad + ", procesador=" + procesador + ", camara=" + camara + "]";
 }
 
-public void interactuarApp(){
-    System.out.println("Bienvenido a Instagram");
-}
 
 }

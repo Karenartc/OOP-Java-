@@ -3,6 +3,9 @@ package com.generation.ejercicio2302;
 import java.util.ArrayList;
 import java.util.Scanner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.generation.ejercicio2302.models.Conejo;
+import com.generation.ejercicio2302.models.Gato;
 import com.generation.ejercicio2302.models.Perro;
 
 @SpringBootApplication
@@ -40,37 +43,103 @@ public class Ejercicio2302Application {
 		 * 3. Hacer un array de perros para luego imprimirlo
 		 */
 		
-		Scanner teclado = new Scanner(System.in);
-		ArrayList <Perro> misPerros = new ArrayList<Perro>();
+		// Scanner teclado = new Scanner(System.in);
+		// ArrayList <Perro> misPerros = new ArrayList<Perro>();
 
-		System.out.print("¿Cuántos perros va a Ingresar? ");
-		int cantPerros = teclado.nextInt();
+		// System.out.print("¿Cuántos perros va a Ingresar? ");
+		// int cantPerros = teclado.nextInt();
 
-		for(int i = 1; i <= cantPerros; i++){
-			Perro perroVacio = new Perro();
-			teclado.nextLine();
-			System.out.print("\nIngresara los Datos del perro Numero " + i);
+		// for(int i = 1; i <= cantPerros; i++){
+		// 	Perro perroVacio = new Perro();
+		// 	teclado.nextLine();
+		// 	System.out.print("\nIngresara los Datos del perro Numero " + i);
 
-			System.out.print("\n¿Cuál es la raza del perro? ");
-			perroVacio.setRaza(teclado.nextLine());
-			System.out.print("¿Cuál es el color del perro? ");
-			perroVacio.setColor(teclado.nextLine());
-			System.out.print("¿Cuál es el tamaño del perro? ");
-			perroVacio.setTamanio(teclado.nextDouble());
-			teclado.nextLine();
-			System.out.print("¿Cuál es el pelaje del perro? ");
-			perroVacio.setPelaje(teclado.nextLine());
-			System.out.println("¿Cuál es el sexo del perro? ");
-			System.out.print("Femenino = F / Masculino = M: ");
-			perroVacio.setSexo(teclado.next().charAt(0));
-			System.out.print("¿Cuál es el Chip del perro? ");
-			perroVacio.setChip(teclado.nextInt());
+		// 	System.out.print("\n¿Cuál es la raza del perro? ");
+		// 	perroVacio.setRaza(teclado.nextLine());
+		// 	System.out.print("¿Cuál es el color del perro? ");
+		// 	perroVacio.setColor(teclado.nextLine());
+		// 	System.out.print("¿Cuál es el tamaño del perro? ");
+		// 	perroVacio.setTamanio(teclado.nextDouble());
+		// 	teclado.nextLine();
+		// 	System.out.print("¿Cuál es el pelaje del perro? ");
+		// 	perroVacio.setPelaje(teclado.nextLine());
+		// 	System.out.println("¿Cuál es el sexo del perro? ");
+		// 	System.out.print("Femenino = F / Masculino = M: ");
+		// 	perroVacio.setSexo(teclado.next().charAt(0));
+		// 	System.out.print("¿Cuál es el Chip del perro? ");
+		// 	perroVacio.setChip(teclado.nextInt());
 
-			misPerros.add(perroVacio);
-		}
+		// 	misPerros.add(perroVacio);
+		// }
 
-		System.out.println(misPerros);
-		teclado.close();
+		// System.out.println(misPerros);
+		// teclado.close();
+
+		//Pruebas de Herencia
+
+		//creacion de Gato
+
+		Gato michiVacio = new Gato();
+		Gato michiGordito = new Gato("MichiGuaton", "Egipcio", "Calvo", true, 12);
+		
+		System.out.println(michiVacio);
+		System.out.println(michiGordito);
+
+		System.out.println("\n");
+		//creacion de Conejo
+
+		Conejo seniorBigotes = new Conejo();
+		Conejo badBunny = new Conejo("Bad Bunny", "Cabeza de Leon", "Peludito", false, 5.0);
+
+		System.out.println(seniorBigotes);
+		System.out.println(badBunny);
+
+		System.out.println("\n");
+		//Getters y Setters
+
+		michiVacio.setNombre("Pelusa");
+		seniorBigotes.setNombre("Señor Bigotes");
+
+		System.out.println(seniorBigotes);
+		System.out.println(michiVacio);
+
+		System.out.println("\n");
+
+		//no puedes ingresar a los metodos de las clases hermanas
+		michiGordito.manullar();
+		badBunny.saltarAlto();
+		//ambos pueden acceder a los metos de la clase padre
+		//se supone que la clase animal tiene funcion caminar
+		//gato y conejo puede acceder a caminar
+
+
+		//HECHO EN GRUPO DE EJEMPLO
+		//sobre heredados
+		
+		// OBJETOS QUE TENEMOS:
+		//COMPUTADOR, SMARTPHONE, SMARTTV
+
+		//CLASE PADRE: ArticulosElectronicos
+
+		//ATRIBUTOS CLASE PADRE:
+
+		/* Marca:
+		* Modelo:
+		* Tamanio:
+		* Color:
+		* Bluetooth:
+		* SistemaOperativo:
+		*/
+
+		//FUNCIONES: 
+
+		/*
+		* Reproducir medios audiovisuales
+		* Navegar en internet 
+		* Interactuar con aplicaciones
+		* Jugar
+		*/
+
 
 	}
 
